@@ -25,10 +25,12 @@ int main(int argc,char* argv[]){
 
     buffer1[0]='\0';
     lseek(file,0,SEEK_SET);//定位到文件开头
-    while(read(file,buffer1,BUFSIZ)>0 ){
-        printf("%s",buffer1);
+    int res = 0;
+    while((res = read(file,buffer1,BUFSIZ)) > 0 ){
+        for(int i =0 ; i <res ; i++ )
+        printf("%c",buffer1[i]);
     }
-
+    printf("\n");
     //关闭文件
     if(close(file)<0){
         perror("关闭失败");

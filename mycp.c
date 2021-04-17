@@ -30,8 +30,9 @@ int main(int argc,char* argv[]){
 
     buffer1[0]='\0';
     lseek(file_r,0,SEEK_SET);//定位到文件开头
-    while(read(file_r,buffer1,BUFSIZ)>0 ){
-        if( write(file_w,buffer1,strlen(buffer1)) < 0 ){
+    int res = 0;
+    while((res = read(file_r,buffer1,BUFSIZ))>0 ){
+        if( write(file_w,buffer1,res) < 0 ){
             perror("写入文件失败");
             return -1;
         }

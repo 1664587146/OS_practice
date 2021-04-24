@@ -6,8 +6,7 @@
 #include <string.h>
 
 #define MAX_ARGC 10
-void mysys(char *command)
-{
+void mysys(char *command){
     int pid ;
     char *argv[MAX_ARGC + 1];
     char *string;

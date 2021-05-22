@@ -77,7 +77,7 @@ void mysys(char *command){
         des_file = strtok(des_file," ");
         source = strtok(string,">");
         strncpy(argv[0],source , 4);
-        source = source + 4;
+        source = source + 5;
         strcpy(argv[1],source);
         argv[2] = NULL;
         pid = fork();
@@ -111,7 +111,7 @@ int main()
         printf("> ");
         fgets(buf, 80, stdin);
         int len = strlen(buf);
-        buf[len - 1] = '\0';
+        buf[len] = '\0';
         mysys(buf);
     }
     return 0;

@@ -72,7 +72,7 @@ int main()
         printf("> ");
         fgets(buf, 80, stdin);
         int len = strlen(buf);
-        buf[len - 1] = '\0';
+        buf[len] = '\0';
         mysys(buf);
     }
     return 0;

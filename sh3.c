@@ -81,20 +81,20 @@ void parse_commands(char *line){
     // }
 }
 
-void test_dump(){
-    int i = 0, j = 0;
-    for (i = 0; i < com_c; i++) {
-        for (j = 0; j < commands[i].argc; j++) {
-            printf("%d,%s ", j, commands[i].argv[j]);
-        }
-        printf("\n");
-        if (commands[i].input)
-            printf("in:%s ", commands[i].input);
-        if (commands[i].output)
-            printf("out:%s ", commands[i].output);
-        printf("\n");
-    }
-}
+// void test_dump(){
+//     int i = 0, j = 0;
+//     for (i = 0; i < com_c; i++) {
+//         for (j = 0; j < commands[i].argc; j++) {
+//             printf("%d,%s ", j, commands[i].argv[j]);
+//         }
+//         printf("\n");
+//         if (commands[i].input)
+//             printf("in:%s ", commands[i].input);
+//         if (commands[i].output)
+//             printf("out:%s ", commands[i].output);
+//         printf("\n");
+//     }
+// }
 
 void exec_simple(int child_count){
 
@@ -159,7 +159,7 @@ void mysys(char *line){
         return ;
     line[len - 1] = '\0';       
     parse_commands(line);       //划分命令
-    test_dump();
+    // test_dump();
     if (strcmp(commands[0].argv[0], "exit") == 0) {             
         exit(0);
     } else if (strcmp(commands[0].argv[0], "cd") == 0) {
